@@ -96,7 +96,7 @@ For a naming style to be used against debugging, try the following:
 const obfuscate = require('./obfuscate');
 
 function generateName() {
-  return "$";
+  return "ABC";
 }
 
 wasmBinary = obfuscate(wasmBinary, generateName);
