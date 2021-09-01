@@ -117,5 +117,5 @@ As you can see there is one parameter and multiple locals in the function export
 
 ## Disclaimers
 
-1. Can increase wasm file size up by large amounts. Do not use if you'd like very quick loading or instantiation.
+1. Can increase wasm file size by large amounts. Do not use if you'd like very quick loading or instantiation.
 2. The code itself is not obfuscated, only the variable and function names changed
