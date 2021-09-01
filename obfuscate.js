@@ -61,7 +61,7 @@ const generateAlternatingName = () => {
 	let out = "";
 
 	let i = 32;
-	while (i-- > 0) {
+	while (i --> 0) {
 		const rand = Math.random();
 
 		if (type === 0) out += rand < .25 ? "u" : rand < .5 ? "ú" : rand < .75 ? "ü" : "û";
@@ -121,7 +121,7 @@ function obfuscate(wasm, nameStyle = "hex") {
 			}
 			case 2: {
 				let len = branch.vu32();
-				while (len-- > 0) {
+				while (len --> 0) {
 					branch.pos += branch.vu32();
 					branch.pos += branch.vu32();
 
@@ -147,7 +147,7 @@ function obfuscate(wasm, nameStyle = "hex") {
 			}
 			case 3: {
 				let len = branch.vu32();
-				while (len-- > 0) {
+				while (len --> 0) {
 					functionParams.push(paramSignatures[branch.vu32()].length);
 				}
 				break;
@@ -160,7 +160,7 @@ function obfuscate(wasm, nameStyle = "hex") {
 					let locals = 0;
 
 					let i = branch.vu32();
-					while (i-- > 0) {
+					while (i --> 0) {
 						locals += branch.vu32();
 						branch.pos += 1;
 					}
