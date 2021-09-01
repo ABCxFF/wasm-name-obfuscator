@@ -97,11 +97,10 @@ function obfuscate(wasm, nameStyle = "hex") {
         const endPos = branch.pos + size;
         switch (id) {
             case 0: {
-                const name = Decoder.decode(branch.byteArray());
-                if (name === "name") {
+                if (Decoder.decode(branch.byteArray()) === "name") {
                     branch.delete(startPos, endPos - startPos);
 
-                    return obfuscate(branch.buffer)
+                    return obfuscate(branch.buffer);
                 }
 
                 branch.pos = endPos;
@@ -111,9 +110,7 @@ function obfuscate(wasm, nameStyle = "hex") {
                 const len = paramSignatures.length = branch.vu32();
 
                 for (let index = 0; index < len; ++index) {
-                    paramSignatures[index] = Array.from({
-                        length: branch.vu32()
-                    }).map(() => branch.byte());
+                    paramSignatures[index] = new Uint8Array(branch.vu32()).map(() => branch.byte());
 
                     branch.pos += branch.vu32();
                 }
