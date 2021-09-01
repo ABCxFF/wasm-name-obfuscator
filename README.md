@@ -111,9 +111,9 @@ It will convert the wasm file to
         (local.get $ABC))
       (local.get $ABC))))
 ```
-This form of static naming is not included into the package, but can be used to mess with web assembly debuggers such as Chrome's debugger. See the image for reference:
+This form of static naming is not included into the package, but can be used to mess with Web Assembly debuggers such as Chrome's debugger. See the image for reference:
 <img width="960" alt="" src="https://user-images.githubusercontent.com/79597906/131603153-701b4b0b-f3f1-4de3-9f0d-d25280f8d54a.png">
-As you can see there is one parameter and multiple locals in the function exported as "t", but only the parameter is shown due to the fact they all share the same name. This makes it incredibly difficult to debug the wasm file, without knowledge of the naming section.
+As you can see there is one parameter and multiple locals in the function exported as "t", but only the parameter is shown in the `Local Scope` tab due to the fact they all share the same name. This makes it incredibly difficult to debug the wasm file, without knowledge of the naming section.
 
 ## Disclaimers
 
